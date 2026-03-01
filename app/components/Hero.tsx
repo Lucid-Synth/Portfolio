@@ -30,9 +30,7 @@ function Hero() {
             systems. I enjoy turning complex problems into simple, scalable
             solutions through thoughtful design and clean code. My interests
             span full-stack development, system architecture, and performance
-            optimization. I’m constantly exploring new technologies and refining
-            my skills to create efficient, reliable, and user-centered software
-            experiences.
+            optimization.
           </p>
 
           <div className="flex flex-wrap gap-8 items-center">
