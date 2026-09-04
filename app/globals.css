@@ -18,9 +18,11 @@
   /* X-style hairline (subtle separators) */
   --line: rgba(0, 0, 0, 0.08);
   --line-hover: rgba(0, 0, 0, 0.04);
-  --dot-color: rgba(0, 0, 0, 0.07);
+  --grid-color: rgba(0, 0, 0, 0.012);
+  --grid-gap: 72px;
+  --dot-color: var(--grid-color);
   --dot-size: 1px;
-  --dot-gap: 22px;
+  --dot-gap: var(--grid-gap);
   --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -36,7 +38,8 @@
   --accent-dim: rgba(215, 25, 33, 0.1);
   --line: rgba(255, 255, 255, 0.1);
   --line-hover: rgba(255, 255, 255, 0.03);
-  --dot-color: rgba(255, 255, 255, 0.045);
+  --grid-color: rgba(255, 255, 255, 0.015);
+  --dot-color: var(--grid-color);
 }
 
 * {
@@ -77,15 +80,14 @@ body {
   background: var(--fg-subtle);
 }
 
-/* ========= DOT GRID BACKGROUND ========= */
-.dot-grid {
-  background-image: radial-gradient(
-    circle,
-    var(--dot-color) var(--dot-size),
-    transparent var(--dot-size)
-  );
-  background-size: var(--dot-gap) var(--dot-gap);
-  background-position: center center;
+/* ========= GRID BACKGROUND ========= */
+.dot-grid,
+.grid-bg {
+  background-image:
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+  background-size: var(--grid-gap) var(--grid-gap);
+  background-position: top left;
 }
 
 /* ========= NOTHING CARD ========= */
@@ -409,30 +411,7 @@ body {
   animation-play-state: paused;
 }
 
-/* ========= SCAN LINE ========= */
-.scan-line {
-  position: relative;
-  overflow: hidden;
-}
 
-.scan-line::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: var(--fg);
-  opacity: 0.08;
-  animation: scan 5s linear infinite;
-  pointer-events: none;
-}
-
-@keyframes scan {
-  0% { top: 0; opacity: 0.1; }
-  50% { opacity: 0.04; }
-  100% { top: 100%; opacity: 0.1; }
-}
 
 /* ========= FADE IN ANIMATIONS ========= */
 @keyframes fade-up {
@@ -562,9 +541,6 @@ body {
     animation: none;
   }
   .status-indicator {
-    animation: none;
-  }
-  .scan-line::after {
     animation: none;
   }
   * {

@@ -240,7 +240,7 @@ export default function Home() {
         {/* ===== HERO ===== */}
         {settings.showHero && (
           <FadeIn index={1}>
-            <section className="x-row py-10 px-5 sm:py-16 sm:px-7 scan-line">
+            <section className="x-row py-10 px-5 sm:py-16 sm:px-7">
               <div className="flex items-start gap-5 sm:gap-6 mb-6">
                 <div className="relative shrink-0">
                   <div className="n-card p-0.75" style={{ width: "fit-content" }}>
@@ -689,7 +689,7 @@ export default function Home() {
                     className="n-mono text-[11px]"
                     style={{ color: "var(--fg-subtle)" }}
                   >
-                    © {new Date().getFullYear()} {siteConfig.name.toUpperCase()}
+                    ©LucidSynth
                   </span>
                 </div>
                 <span

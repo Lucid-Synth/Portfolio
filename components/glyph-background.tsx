@@ -23,7 +23,7 @@ export function GlyphBackground({
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden dot-grid">
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden grid-bg dot-grid">
       {/* Soft edge vignette so content reads cleaner on the grid */}
       <div
         className="absolute inset-0"

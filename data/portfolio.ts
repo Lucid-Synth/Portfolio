@@ -24,7 +24,7 @@ export const settings = {
   showFooter: true,
   enableTicker: true, 
   enableScrollProgress: true, // vertical charging strip (desktop)
-  enableDotGrid: false, // dot-grid background
+  enableDotGrid: true, // dot-grid background
 };
 
 // ========= PERSONAL INFO (Hero section) =========
